@@ -2,9 +2,14 @@ public class MyArrays{
 
   public static void main(String[]args)
   {
-    System.out.println(arrayToString(new int[]{1,2,3,4,5}));
-    System.out.println(returnCopy(new int[]{1,2,9,4,5}));
-    System.out.println(arrayToString(returnCopy(new int[]{1,2,9,4,5})));
+
+    int[] array1 = new int[]{1,2,3,4,5};
+    int[] array2 = new int[]{6,7,8,9,10};
+    System.out.println(arrayToString(array1));
+    System.out.println(returnCopy(array2));
+    System.out.println(arrayToString(returnCopy(array2)));
+    System.out.println(concatArray(array1, array2));
+    System.out.println(arrayToString(concatArray(array1, array2)));
   }
 
 
@@ -32,6 +37,30 @@ public static int[] returnCopy(int [] ary){
 
   return (newarray);
 }
+
+public static int[] concatArray(int [] ary1, int [] ary2)
+{
+  int[] ary12 = new int [ary1.length + ary2.length];
+  int counter = 0;
+
+  for(int i = 0; i < ary1.length; i++)
+  {
+    ary12[counter] = ary1[i];
+    counter++;
+
+  }
+
+  for(int i = 0; i < ary2.length; i++)
+  {
+    ary12[counter] = ary2[i];
+    counter++;
+
+  }
+
+return ary12;
+
+}
+
 
 
 }
