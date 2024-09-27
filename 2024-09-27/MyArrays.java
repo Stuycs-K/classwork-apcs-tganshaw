@@ -4,12 +4,12 @@ public class MyArrays{
   {
 
     int[] array1 = new int[]{1,2,3,4,5};
-    int[] array2 = new int[]{6,7,8,9,10};
+    int[] array2 = new int[]{6,7,8,9,10,11};
     System.out.println(arrayToString(array1));
-    System.out.println(returnCopy(array2));
-    System.out.println(arrayToString(returnCopy(array2)));
-    System.out.println(concatArray(array1, array2));
-    System.out.println(arrayToString(concatArray(array1, array2)));
+    System.out.println("Copy: " + returnCopy(array2) + ". Original: " + array2);
+    System.out.println("Copy: " + arrayToString(returnCopy(array2)) +  ". Original: " + arrayToString(array2));
+    System.out.println("Concatenated: " + concatArray(array1, array2) + ". Originals: " + array1 + array2);
+    System.out.println("Concatenated: " + arrayToString(concatArray(array1, array2)) + ". Originals: " + arrayToString(array1) + arrayToString(array2));
   }
 
 
