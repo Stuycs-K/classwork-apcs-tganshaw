@@ -4,15 +4,23 @@ public static void main(String[]args) {
 
   int[] x = {1,4,6,8};
   int[] z = {2,3,6,9};
+  System.out.println("\n" + "---arrayToString---" + "\n");
   System.out.println(arrayToString(x));
   System.out.println(arrayToString(z));
+  System.out.println("\n" + "---arrToString---" + "\n");
   int[][] testcase = {{2,3,4}, {4,3,2}, {33,23,42}};
   System.out.println(arrToString(testcase));
+  System.out.println("\n" + "---arr2DSum---" + "\n");
   System.out.println(arr2DSum(testcase));
+  System.out.println("\n" + "---swapRC---" + "\n");
   System.out.println(arrToString(swapRC(testcase)));
   int[][] y = {{-1,2,3},{-4,-5,-6}};
   System.out.println(arrToString(swapRC(y)));
+  System.out.println("\n" + "---replaceNegative---" + "\n");
   replaceNegative(y);
+  System.out.println("\n" + "---copy---" + "\n");
+  copy(testcase);
+  copy(y);
 }
 
 
@@ -99,6 +107,24 @@ public static void replaceNegative(int[][] vals) {
   System.out.println(arrToString(vals));
 }
 
+public static int[][] copy(int[][] nums){
+  int[][] copyarray = new int[nums.length][];
+  for(int i = 0; i < nums.length; i++)
+  {
+    copyarray[i] = new int[nums[i].length];
+  }
+  for(int i = 0; i < nums.length; i++)
+  {
+    for(int n = 0; n < nums[i].length; n++)
+    {
+      copyarray[i][n] = nums[i][n];
+    }
+  }
 
+
+
+  System.out.println(arrToString(copyarray));
+  return null;
+}
 
 }
