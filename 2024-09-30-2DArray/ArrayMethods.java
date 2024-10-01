@@ -53,14 +53,36 @@ public static int arr2DSum(int [][]nums) {
 }
 
 
-public static int[][] swapRC (int[][] nums){
-  int[][] output = new int [nums[0].length][nums.length];
-  for(int i=0;i<nums[0].length;i++) {
-    for(int x=0;x<nums.length;x++) {
-      output[i][x] = nums[x][i];
-    }
-  }
-  return output;
+public static int[][] swapRC(int[][]nums){
+
+ int[][] newarray = new int[nums[0].length][nums.length];
+ int counter = 0;
+ int counter2 = 0;
+ int counter3 = 0;
+ int counter4 = 0;
+
+for(int i = 0; i < nums.length * nums[0].length; i++)
+{
+ if (counter < nums.length)
+ {
+   newarray[counter2][counter] = nums[counter4][counter3];
+   counter++;
+   counter3++;
+ }
+ if (counter == nums.length)
+ {
+   counter2++;
+   counter = 0;
+ }
+ if(counter3 == nums[0].length)
+ {
+   counter4++;
+   counter3 = 0;
+ }
+
+
+}
+ return (newarray);
 }
 
 public static void replaceNegative(int[][] vals) {
