@@ -10,7 +10,9 @@ public static void main(String[]args) {
   System.out.println(arrToString(testcase));
   System.out.println(arr2DSum(testcase));
   System.out.println(arrToString(swapRC(testcase)));
-
+  int[][] y = {{-1,2,3},{-4,-5,-6}};
+  System.out.println(arrToString(swapRC(y)));
+  replaceNegative(y);
 }
 
 
@@ -68,10 +70,11 @@ public static void replaceNegative(int[][] vals) {
         if(x == i) {
           vals[i][x] = 1;
         }
-        vals[i][x] = 0;
+        else{vals[i][x] = 0;}
       }
     }
   }
+  System.out.println(arrToString(vals));
 }
 
 
