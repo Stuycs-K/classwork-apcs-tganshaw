@@ -19,8 +19,10 @@ public static void main(String[]args) {
   System.out.println("\n" + "---replaceNegative---" + "\n");
   replaceNegative(y);
   System.out.println("\n" + "---copy---" + "\n");
+  int [][] a = {{1,2,3},{2,4},{13,13,14}};
   copy(testcase);
   copy(y);
+  copy(a);
 }
 
 
