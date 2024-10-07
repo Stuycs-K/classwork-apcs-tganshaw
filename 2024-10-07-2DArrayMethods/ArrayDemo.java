@@ -7,6 +7,7 @@ public class ArrayDemo{
     System.out.println("\n" + "---arrayToString---" + "\n");
     System.out.println(arrayToString(x));
     System.out.println(arrayToString(z));
+    System.out.println("Expected values:" + "\n" + Arrays.toString(x) + "\n" + Arrays.toString(z));
 
     System.out.println("\n" + "---arrToString---" + "\n");
     int[][] testcase = {{2,3,4}, {4,3,2}, {33,23,42}};
@@ -30,8 +31,12 @@ public class ArrayDemo{
     copy(y);
     copy(a);
 
+    System.out.println("\n" + "---countZeros2D---" + "\n");
     System.out.println(countZeros2D(b));
+
+    System.out.println("\n" + "---htmlTable---" + "\n");
     System.out.println(htmlTable(y));
+    System.out.println("\n" + "\n" + "\n");
   }
 
   public static String arrayToString(int[] arr) {
