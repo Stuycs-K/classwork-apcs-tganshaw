@@ -5,7 +5,10 @@ public class Demo{
   to the others.
   */
   public static double distance(Point a, Point b){
-    return a.distanceTo(b);
+    return Math.sqrt(
+		    Math.pow(b.getX()-a.getX(), 2) +
+		    Math.pow(b.getY()-a.getY(), 2)
+		    );
   }
 
   public static void main(String[]args){
