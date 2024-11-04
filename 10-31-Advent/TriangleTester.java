@@ -29,11 +29,16 @@ for(int i = 0; i < 5; i++)
   System.out.println("\n");
 }
 
-System.out.println(countTrianglesA("tester.txt"));
+System.out.println(countTrianglesA("inputTri.txt"));
 
-System.out.println("\n\n------PARTB------");
+System.out.println("\n\n------PARTB------\n");
 
+System.out.println(countTrianglesB("inputTri.txt"));
 }
+
+
+
+
 
 public static int countTrianglesA(String filename)
 {
@@ -68,7 +73,7 @@ try{
 if((side1 + side2 > side3) && (side2 + side3 > side1) && (side1 + side3 > side2))
 {n++;}
 }
-
+sc.close();
 }
 catch(FileNotFoundException e)
 {
@@ -85,6 +90,10 @@ return n;
 public static int countTrianglesB(String filename)
 {
 
+int n = 0;
+int count = 0;
+int tracker = 0;
+try{
 /*
 
 Best way to do this is have a 2D Array. Add every line in it. Then for each triangle you do. arr[i][n] side 1,
@@ -94,19 +103,77 @@ to write in class.
 
 */
 
+File file = new File(filename);
+Scanner sc = new Scanner(file);
+
+
+
+int side1 = 0;
+int side2 = 0;
+int side3 = 0;
+
+while(sc.hasNextLine())
+{
+  count++;
+  sc.nextLine();
+}
+
+sc.close();
+File file2 = new File(filename);
+Scanner sc2 = new Scanner(file2);
+
+
+String[][] arr = new String[count][3];
+
+for(int i = 0; i < count; i++)
+{
+  arr[i] = sc2.nextLine().split(" ");
+
+
+}
+
+sc2.close();
+
+
+
+for(int i = 0; i < count; i++)
+{
+
+while(tracker < 3){
+  side1 = Integer.parseInt(arr[i][tracker]);
+  System.out.println(side1);
+  side2 = Integer.parseInt(arr[i+1][tracker]);
+    System.out.println(side2);
+  side3 = Integer.parseInt(arr[i+2][tracker]);
+    System.out.println(side3);
+
+if((side1 + side2 > side3) && (side2 + side3 > side1) && (side1 + side3 > side2))
+  {n++;}
+tracker++;
+}
+
+i+= 2;
+
+
+if(tracker == 3)
+{
+  tracker= 0;
+}
+
+}
 
 
 
 
 
-return 0;
 
 
 
-
-
-
-
+}catch(Exception FileNotFoundException)
+{
+  System.out.println("File Not Found");
+}
+return n;
 
 
 }
