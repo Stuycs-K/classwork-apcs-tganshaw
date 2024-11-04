@@ -31,6 +31,8 @@ for(int i = 0; i < 5; i++)
 
 System.out.println(countTrianglesA("tester.txt"));
 
+System.out.println("\n\n------PARTB------");
+
 }
 
 public static int countTrianglesA(String filename)
@@ -75,6 +77,39 @@ catch(FileNotFoundException e)
 return n;
 }
 
+
+
+
+
+
+public static int countTrianglesB(String filename)
+{
+
+/*
+
+Best way to do this is have a 2D Array. Add every line in it. Then for each triangle you do. arr[i][n] side 1,
+arr[i][n] side 2, etc. Do that three times then add one to n. Then repeat & add 1 to n again. At the end of the for,
+check if n is 2. If n is 2 then set it to 0 and add 3 to i. Then repeat until i > arr.length-3. Should be simple enough
+to write in class.
+
+*/
+
+
+
+
+
+
+return 0;
+
+
+
+
+
+
+
+
+
+}
 
 
 }
