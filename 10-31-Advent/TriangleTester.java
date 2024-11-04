@@ -35,6 +35,10 @@ System.out.println(countTrianglesA("tester.txt"));
 
 public static int countTrianglesA(String filename)
 {
+
+
+    int n = 0;
+
 try{
   File file = new File(filename);
   Scanner sc = new Scanner(file);
@@ -44,24 +48,23 @@ try{
   int side1 = 0;
   int side2 = 0;
   int side3 = 0;
-  String[] arr = new String[3];
-  int n = 0;
+
+
 
   while(sc.hasNextLine())
 {
-  for(int i = 0; i < sc.nextLine().length(); i++)
-  {
-    if(sc.nextLine().charAt(i) != ' ')
-    {
-      arr[n] += sc.nextLine().charAt(i);
-    }
-    else
-    {
-      n++;
-    }
-    System.out.println(sc.nextLine());
-  }
+  String[] arr = sc.nextLine().split(" ");
+  for(int i = 0; i < arr.length;i++){
+    if (i == 0)
+    {side1 = Integer.parseInt(arr[i]);}
+    if (i == 1)
+    {side2 = Integer.parseInt(arr[i]);}
+    if (i == 2)
+    {side3 = Integer.parseInt(arr[i]);}
+}
 
+if((side1 + side2 > side3) && (side2 + side3 > side1) && (side1 + side3 > side2))
+{n++;}
 }
 
 }
@@ -69,7 +72,7 @@ catch(FileNotFoundException e)
 {
   System.out.println("filenotfound");
 }
-return 1;
+return n;
 }
 
 
