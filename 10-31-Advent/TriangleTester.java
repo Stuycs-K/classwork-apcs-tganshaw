@@ -24,16 +24,18 @@ while(sc2.hasNextDouble())
 System.out.println(sum);
 
 
-for(int i = 0; i < 5; i++)
+for(int i = 0; i < 3; i++)
 {
   System.out.println("\n");
 }
 
-System.out.println(countTrianglesA("inputTri.txt"));
+System.out.println("\n\n------PART A------\n");
 
-System.out.println("\n\n------PARTB------\n");
+System.out.println("There are " + countTrianglesA("inputTri.txt") + " valid triangles.");
 
-System.out.println(countTrianglesB("inputTri.txt"));
+System.out.println("\n\n------PART B------\n");
+
+System.out.println("There are " + countTrianglesB("inputTri.txt") + " valid triangles.");
 }
 
 
@@ -60,7 +62,7 @@ try{
 
   while(sc.hasNextLine())
 {
-  String[] arr = sc.nextLine().split(" ");
+  String[] arr = sc.nextLine().split("\\s+");
   for(int i = 0; i < arr.length;i++){
     if (i == 0)
     {side1 = Integer.parseInt(arr[i]);}
@@ -127,7 +129,7 @@ String[][] arr = new String[count][3];
 
 for(int i = 0; i < count; i++)
 {
-  arr[i] = sc2.nextLine().split(" ");
+  arr[i] = sc2.nextLine().split("\\s+");
 
 
 }
@@ -141,11 +143,10 @@ for(int i = 0; i < count; i++)
 
 while(tracker < 3){
   side1 = Integer.parseInt(arr[i][tracker]);
-  System.out.println(side1);
+
   side2 = Integer.parseInt(arr[i+1][tracker]);
-    System.out.println(side2);
+
   side3 = Integer.parseInt(arr[i+2][tracker]);
-    System.out.println(side3);
 
 if((side1 + side2 > side3) && (side2 + side3 > side1) && (side1 + side3 > side2))
   {n++;}
