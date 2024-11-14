@@ -13,6 +13,13 @@ public static void main(String[]args)
   replaceEmpty(newArr);
   System.out.println(newArr);
   System.out.println(makeReversedList(newArr));
+
+System.out.println("\n\n\n");
+  ArrayList<String> newArr2 = createRandomArray(15);
+    replaceEmpty(newArr2);
+  System.out.println(newArr2);
+    System.out.println(newArr);
+  System.out.println(mixLists(newArr,newArr2));
 }
 
 
@@ -61,7 +68,39 @@ public static ArrayList<String> makeReversedList( ArrayList<String> original){
 }
 
 
+public static ArrayList<String> mixLists( ArrayList<String> a,  ArrayList<String> b){
+  //return a new ArrayList that has all values of a and b in alternating order that is:
+  //a[0], b[0], a[1], b[1]...
+  //If one list is longer than the other, just attach the remaining values to the end.
+  ArrayList<String> returnedAry = new ArrayList<String>(a.size() + b.size());
 
+  int minlength = Integer.min(a.size(),b.size());
+
+  for(int i =0; i < minlength;i++)
+  {
+    returnedAry.add(a.get(i));
+    returnedAry.add(b.get(i));
+  }
+
+  if(a.size() == minlength && b.size() != minlength)
+  {
+    for(int i = minlength; i < b.size(); i++)
+    {
+      returnedAry.add(b.get(i));
+    }
+  }
+  else if (b.size() == minlength && a.size() != minlength)
+  {
+    for(int i = minlength; i < a.size(); i++)
+    {
+      returnedAry.add(a.get(i));
+    }
+  }
+
+
+
+  return returnedAry;
+}
 
 
 
