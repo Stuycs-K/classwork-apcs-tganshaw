@@ -5,21 +5,29 @@ public class ArrayListPractice{
 public static void main(String[]args)
 {
 
+System.out.println("\n\n----createRandomArray----");
   System.out.println(createRandomArray(20));
   System.out.println(createRandomArray(200000));
+  System.out.println(createRandomArray(-20));
 
+System.out.println("\n\n----replaceEmpty----");
   ArrayList<String> newArr = createRandomArray(20);
   System.out.println(newArr);
   replaceEmpty(newArr);
   System.out.println(newArr);
-  System.out.println(makeReversedList(newArr));
 
-System.out.println("\n\n\n");
+System .out.println("\n\n----makeReversedList----");
+  System.out.println(newArr);
+  System.out.println(makeReversedList(newArr));
   ArrayList<String> newArr2 = createRandomArray(15);
     replaceEmpty(newArr2);
+
+System.out.println("\n\n----mixLists----");
   System.out.println(newArr2);
     System.out.println(newArr);
   System.out.println(mixLists(newArr,newArr2));
+
+  System.out.println("\n\n");
 }
 
 
@@ -29,9 +37,13 @@ System.out.println("\n\n\n");
 
 
 public static ArrayList<String>createRandomArray(int size){
-
+try{
+ArrayList<String> arr = new ArrayList<String>(size);}
+catch(Exception e){
+  System.out.print("Size must be greater than 0. Instead got " + size);
+  return new ArrayList<String>(1);
+}
 ArrayList<String> arr = new ArrayList<String>(size);
-
 
 for(int i = 0; i < size; i++)
 {
