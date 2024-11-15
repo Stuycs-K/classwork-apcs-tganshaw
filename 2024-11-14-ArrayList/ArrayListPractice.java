@@ -9,6 +9,7 @@ System.out.println("\n\n----createRandomArray----");
   System.out.println(createRandomArray(20));
   System.out.println(createRandomArray(200000));
   System.out.println(createRandomArray(-20));
+  System.out.println(createRandomArray(0));
 
 System.out.println("\n\n----replaceEmpty----");
   ArrayList<String> newArr = createRandomArray(20);
@@ -40,7 +41,7 @@ public static ArrayList<String>createRandomArray(int size){
 try{
 ArrayList<String> arr = new ArrayList<String>(size);}
 catch(Exception e){
-  System.out.print("Size must be greater than 0. Instead got " + size);
+  System.out.print("Size must be positive. Instead got " + size);
   return new ArrayList<String>(1);
 }
 ArrayList<String> arr = new ArrayList<String>(size);
