@@ -64,21 +64,21 @@ try{
 {
   String[] arr = sc.nextLine().split("\n");
   for(int i = 0; i < arr.length;i++){
-    System.out.println(arr[i]);
-    String[] arr2 = arr[i].split("\s+");
-    if(!arr2[i].equals("")){
 
-    side1 = Integer.parseInt(arr2[i]);
+    String[] arr2 = arr[i].strip().split("\\s+");
 
-    side2 = Integer.parseInt(arr2[i+1]);
+    side1 = Integer.parseInt(arr2[0]);
+    side2 = Integer.parseInt(arr2[1]);
+    side3 = Integer.parseInt(arr2[2]);
 
-    side3 = Integer.parseInt(arr2[i+2]);}
 
+System.out.println((side1 + side2 > side3) && (side2 + side3 > side1) && (side1 + side3 > side2));
 
 }
 
 if((side1 + side2 > side3) && (side2 + side3 > side1) && (side1 + side3 > side2))
-{n++;}
+{n++;
+System.out.println(n);}
 }
 sc.close();
 }
