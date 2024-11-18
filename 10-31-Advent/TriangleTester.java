@@ -72,13 +72,12 @@ try{
     side3 = Integer.parseInt(arr2[2]);
 
 
-System.out.println((side1 + side2 > side3) && (side2 + side3 > side1) && (side1 + side3 > side2));
+
 
 }
 
 if((side1 + side2 > side3) && (side2 + side3 > side1) && (side1 + side3 > side2))
-{n++;
-System.out.println(n);}
+{n++;}
 }
 sc.close();
 }
@@ -134,13 +133,12 @@ String[][] arr = new String[count][3];
 
 for(int i = 0; i < count; i++)
 {
-  arr[i] = sc2.nextLine().split("\\s+");
+  arr[i] = sc2.nextLine().strip().split("\s+");
 
 
 }
 
 sc2.close();
-
 
 
 for(int i = 0; i < count; i++)
