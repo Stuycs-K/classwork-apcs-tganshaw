@@ -62,14 +62,19 @@ try{
 
   while(sc.hasNextLine())
 {
-  String[] arr = sc.nextLine().split("\\s+");
+  String[] arr = sc.nextLine().split("\n");
   for(int i = 0; i < arr.length;i++){
-    if (i == 0)
-    {side1 = Integer.parseInt(arr[i]);}
-    if (i == 1)
-    {side2 = Integer.parseInt(arr[i]);}
-    if (i == 2)
-    {side3 = Integer.parseInt(arr[i]);}
+    System.out.println(arr[i]);
+    String[] arr2 = arr[i].split("\s+");
+    if(!arr2[i].equals("")){
+
+    side1 = Integer.parseInt(arr2[i]);
+
+    side2 = Integer.parseInt(arr2[i+1]);
+
+    side3 = Integer.parseInt(arr2[i+2]);}
+
+
 }
 
 if((side1 + side2 > side3) && (side2 + side3 > side1) && (side1 + side3 > side2))
