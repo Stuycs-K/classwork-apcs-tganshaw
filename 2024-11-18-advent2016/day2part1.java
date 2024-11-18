@@ -35,7 +35,7 @@ String[] arr = sc.nextLine().strip().split("\n");
 for(int i = 0; i < arr.length; i++)
 {
 
-  for(int n = 0; n < arr[i].length() ; n++)
+  for(int n = 0; n < arr[i].length(); n++)
   {
     if(arr[i].charAt(n) == 'U' && (ypos != 0))
     {
@@ -58,7 +58,7 @@ for(int i = 0; i < arr.length; i++)
 
 
   }
-  combo += keypad[xpos][ypos];
+  combo += keypad[ypos][xpos];
 }
 }
 
