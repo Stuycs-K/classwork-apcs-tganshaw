@@ -6,9 +6,53 @@ public class day4{
 
 public static void main(String[]args){
 
+int[] arrayy = {1,3,4,5,2,39,20,86,22,2,3,4,5,122};
 
-  System.out.println("Sum is " + checkSumSum("day4input.txt"));
+//System.out.println(Arrays.toString(fivelargest(arrayy)));
+System.out.println("Sum is " + checkSumSum("day4input.txt"));
 }
+
+
+public static int[] fivelargest(int[] arr)
+{
+  int arr2[] = new int[5];
+  int largestnum = 0;
+
+for(int n = 0; n < 5; n++)
+{
+  for(int i =0; i < arr.length; i++)
+  {
+    if(arr[i] >= largestnum)
+    {
+      arr2[n] = arr[i];
+      largestnum = arr[i];
+    }
+
+  }
+  largesttozero(arr);
+  largestnum = 0;
+}
+
+return arr2;
+
+}
+
+public static void largesttozero(int[] arr)
+{
+  int largestnum =0;
+  int index = 0;
+  for(int i = 0; i< arr.length;i++)
+  {
+    if(arr[i] > largestnum)
+    {
+      largestnum = arr[i];
+      index = i;
+    }
+  }
+  arr[index] = 0;
+}
+
+
 
 public static int checkSumSum(String filename)
 {
@@ -34,44 +78,20 @@ while(sc.hasNextLine()){
     //  System.out.println(checksum2);
       for(int n = 0; n < arr[i].length(); n++)
       {
-
       if(i < arr.length-1){alphabetarr[(int)arr[i].charAt(n)-97]++;}
       }
+      System.out.println(Arrays.toString(fivelargest(alphabetarr)));
+      int[] arr2 = fivelargest(alphabetarr);
       if(i == arr.length-1){
 
-      for(int x = 0; x < checksum2.length()-1;x++)
+      for(int x = 0; x < checksum2.length();x++)
       {
-      /*  System.out.println(checksum2.charAt(x));
-        System.out.println(checksum2.charAt(x+1));
-      */ // System.out.println(checksum2);
-
-      //  System.out.println(alphabetarr[((int)checksum2.charAt(x))-97]);
-      //  System.out.println(alphabetarr[((int)checksum2.charAt(x+1))-97]);
 
         char chari = checksum2.charAt(x);
-        char chari2 = checksum2.charAt(x+1);
         int int1 = alphabetarr[((int)checksum2.charAt(x))-97];
-        int int2 = alphabetarr[((int)checksum2.charAt(x+1))-97];
-  //      System.out.println(chari);
-  //      System.out.println(chari2);
 
-        if(int1 == 0 || int2 == 0)
-        {
-          checkedsum = false;
-        }
-        if(int2 > int1)
-        {
-          checkedsum = false;
-        }
-        if(int1 == int2)
-        {//USE A 2D ARRAY FOR THIS I THINK IT'LL MAKE YOUR LIFE EASIER
-          if(chari > chari2)
-          {
-            checkedsum = false;
-          }
-        }
-
-
+        System.out.print(int1 + "" + arr2[x] + "\n");
+        if(int1 != arr2[x]){checkedsum = false;}
       }
       if(checkedsum)
       {
@@ -97,7 +117,6 @@ while(sc.hasNextLine()){
 
 return sum;
 }
-
 
 
 
