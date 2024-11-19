@@ -1,5 +1,5 @@
-import java.util.Scanner;
-import java.io.File;
+import java.util.*;
+import java.io.*;
 import java.io.FileNotFoundException;
 
 public class day4{
@@ -22,16 +22,16 @@ while(sc.hasNextLine()){
     String[] arr = sc.nextLine().split("-");
         int[] alphabetarr = new int[26];
         System.out.println("------");
-
+      System.out.println(Arrays.toString(arr));
     boolean checkedsum = true;
 
     for(int i =0; i < arr.length;i++)
     {
       String checksum = arr[arr.length-1];
-      System.out.println(checksum);
-      System.out.println(arr[i]);
+    //  System.out.println(checksum);
+    //  System.out.println(arr[i]);
       String checksum2 =checksum.substring(4,9);
-      System.out.println(checksum2);
+    //  System.out.println(checksum2);
       for(int n = 0; n < arr[i].length(); n++)
       {
 
@@ -43,17 +43,17 @@ while(sc.hasNextLine()){
       {
       /*  System.out.println(checksum2.charAt(x));
         System.out.println(checksum2.charAt(x+1));
-      */  System.out.println(checksum2);
+      */ // System.out.println(checksum2);
 
-        System.out.println(alphabetarr[((int)checksum2.charAt(x))-97]);
-        System.out.println(alphabetarr[((int)checksum2.charAt(x+1))-97]);
+      //  System.out.println(alphabetarr[((int)checksum2.charAt(x))-97]);
+      //  System.out.println(alphabetarr[((int)checksum2.charAt(x+1))-97]);
 
         char chari = checksum2.charAt(x);
         char chari2 = checksum2.charAt(x+1);
         int int1 = alphabetarr[((int)checksum2.charAt(x))-97];
         int int2 = alphabetarr[((int)checksum2.charAt(x+1))-97];
-        System.out.println(chari);
-        System.out.println(chari2);
+  //      System.out.println(chari);
+  //      System.out.println(chari2);
 
         if(int1 == 0 || int2 == 0)
         {
