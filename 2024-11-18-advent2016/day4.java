@@ -64,7 +64,7 @@ while(sc.hasNextLine()){
           checkedsum = false;
         }
         if(int1 == int2)
-        {
+        {//USE A 2D ARRAY FOR THIS I THINK IT'LL MAKE YOUR LIFE EASIER
           if(chari > chari2)
           {
             checkedsum = false;
