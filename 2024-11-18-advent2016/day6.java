@@ -86,11 +86,11 @@ public static String mostcommon(String[] arr)
     alphaarr[(int) arr[i].charAt(0) - 97]++;
   }
 
-  int largestnumber = 0;
+  int largestnumber = 9267;
   int index = 0;
   for(int i =0;i< alphaarr.length;i++)
   {
-    if(alphaarr[i] > largestnumber)
+    if(alphaarr[i] < largestnumber)
     {
       largestnumber = alphaarr[i];
       index = i;
