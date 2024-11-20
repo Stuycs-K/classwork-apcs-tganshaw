@@ -11,6 +11,9 @@ int[] arrayy = {1,3,4,5,2,39,20,86,22,2,3,4,5,122};
 //System.out.println(Arrays.toString(fivelargest(arrayy)));
 System.out.println("Sum is " + checkSumSum("day4input.txt"));
 //System.out.println(caesarshift("qzmtzixmtkozyivhz",343));
+
+
+System.out.println("CURRENT CODE ONLY DOES PART 2. FOR PART 1, GO TO THE BOTTOM OF CHECKSUMSUM AND COMMENT IN THE STUFF THAT SAYS PART1 AND COMMENT OUT THE STUFF THAT SAYS PART 2. DOING THIS SO I DON'T HAVE TO REWRITE AND COPY ALL MY CODE IN CASE YOU CHECK THIS. APOLOGIES BUT THIS IS HOW I WORK BEST.");
 }
 
 
@@ -94,15 +97,16 @@ while(sc.hasNextLine()){
       //  System.out.print(int1 + "" + arr2[x] + "\n");
         if(int1 != arr2[x]){checkedsum = false;}
       }
-
+    //  if(checkedsum){ PART1
       //  System.out.println(true);
           //      System.out.println("------");
       //  System.out.println(Arrays.toString(arr));
-        for(int z = 0; z<arr.length;z++)
-        {
-        caesarshift(arr[z],Integer.parseInt(checksum.substring(0,3)));
-        }
-
+        for(int z = 0; z<arr.length;z++) //part2
+        { //part2
+        caesarshift(arr[z],Integer.parseInt(checksum.substring(0,3))); //part2
+        } //part2
+        //sum+=(Integer.parseInt(checksum.substring(0,3)); PART1
+//} PART1
       //System.out.println(Integer.parseInt(checksum.substring(0,3)));
     }
 
