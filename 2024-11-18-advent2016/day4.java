@@ -10,6 +10,7 @@ int[] arrayy = {1,3,4,5,2,39,20,86,22,2,3,4,5,122};
 
 //System.out.println(Arrays.toString(fivelargest(arrayy)));
 System.out.println("Sum is " + checkSumSum("day4input.txt"));
+//System.out.println(caesarshift("qzmtzixmtkozyivhz",343));
 }
 
 
@@ -65,8 +66,8 @@ int sum = 0;
 while(sc.hasNextLine()){
     String[] arr = sc.nextLine().split("-");
         int[] alphabetarr = new int[26];
-        System.out.println("------");
-      System.out.println(Arrays.toString(arr));
+
+
     boolean checkedsum = true;
 
     for(int i =0; i < arr.length;i++)
@@ -80,7 +81,7 @@ while(sc.hasNextLine()){
       {
       if(i < arr.length-1){alphabetarr[(int)arr[i].charAt(n)-97]++;}
       }
-      System.out.println(Arrays.toString(fivelargest(alphabetarr)));
+    //  System.out.println(Arrays.toString(fivelargest(alphabetarr)));
       int[] arr2 = fivelargest(alphabetarr);
       if(i == arr.length-1){
 
@@ -90,14 +91,18 @@ while(sc.hasNextLine()){
         char chari = checksum2.charAt(x);
         int int1 = alphabetarr[((int)checksum2.charAt(x))-97];
 
-        System.out.print(int1 + "" + arr2[x] + "\n");
+      //  System.out.print(int1 + "" + arr2[x] + "\n");
         if(int1 != arr2[x]){checkedsum = false;}
       }
-      if(checkedsum)
-      {
-        System.out.println(true);
-        sum+=Integer.parseInt(checksum.substring(0,3));
-      }
+
+      //  System.out.println(true);
+          //      System.out.println("------");
+      //  System.out.println(Arrays.toString(arr));
+        for(int z = 0; z<arr.length;z++)
+        {
+        caesarshift(arr[z],Integer.parseInt(checksum.substring(0,3)));
+        }
+
       //System.out.println(Integer.parseInt(checksum.substring(0,3)));
     }
 
@@ -114,12 +119,25 @@ while(sc.hasNextLine()){
 
 
 
-
 return sum;
 }
 
 
+public static void caesarshift(String input, int shift)
+{
+  String newinput = "";
+  //System.out.println("----" + shift);
 
+  for(int i = 0; i < input.length();i++)
+  {
+    int a = (int)input.charAt(i)-97 + (shift % 26);
+    if(a >= 26){a-=26;}
+    newinput += (char)(a+97);
+  }
+  if(newinput.equals("northpole")){
+  System.out.println(newinput + " " + shift);
+}
+}
 
 
 
