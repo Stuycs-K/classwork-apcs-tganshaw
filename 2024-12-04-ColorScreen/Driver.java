@@ -14,7 +14,7 @@ public static void main(String[] args) {
    {
      arr[i] = (int)(Math.random() * 100);
    }
-   Text.go(2,2);
+   Text.go(0,2);
    for(int i = 0; i < 3; i++)
    {
      if(arr[i] < 25)
@@ -32,7 +32,7 @@ public static void main(String[] args) {
      System.out.print(arr[i] + " ");
    }
 
-   Text.go(3,2);
+   Text.go(2,2);
    for(int i = 0; i < 78; i++)
    {
    System.out.print("-");
@@ -69,7 +69,7 @@ public static void border()
     System.out.print("\u001b[" + Text.background(Text.RED) + "m");
     System.out.print(" ");
   }
-      System.out.println("\u001b[m");
+      System.out.print("\u001b[m");
 
 }
 
