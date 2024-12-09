@@ -49,7 +49,7 @@ public int getSpecialMax()
 
 public String attack(Adventurer other)
 {
-  int dmgnum = 34;
+  int dmgnum = (int) Math.random()*10 + 5;
   restoreSpecial(1);
   other.applyDamage(dmgnum);
   return "Slash!";
@@ -74,9 +74,12 @@ public String specialAttack(Adventurer other)
   if(special == 20)
   {
       other.applyDamage(dmgnum);
+      setSpecial(0);
+      return "ARMAGEDDON";
   }
-  setSpecial(0);
-  return "ARMAGEDDON";
+  else{
+    return "Special Charge Not High Enough";
+  }
 }
 
 
