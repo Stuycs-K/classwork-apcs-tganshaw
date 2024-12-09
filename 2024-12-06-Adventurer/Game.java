@@ -12,6 +12,7 @@ Adventurer Cplusplus = new CodeWarrior("C++",110);
 
 while(notquit)
 {
+  boolean validresponse = true;
 System.out.println("---------------");
 System.out.println("Psyger0 - HP: " + Psyger0.getHP() + " Special: " + Psyger0.getSpecial());
 System.out.println("C++ - HP: " + Cplusplus.getHP() + " Special: " + Cplusplus.getSpecial());
@@ -38,11 +39,11 @@ else if(result.equals("quit"))
 {
   notquit = false;
   System.out.println("Quitting.");
-}
+}else{validresponse = false;}
 
 System.out.println();
 
-if(Cplusplus.getHP() > 0 && notquit)
+if(Cplusplus.getHP() > 0 && notquit && validresponse)
 {
 
   String resultant = "";
