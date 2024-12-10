@@ -8,11 +8,12 @@ public static void main(String[] args) {
 boolean notquit = true;
 Adventurer Psyger0 = new Paladin("Psyger-0", 130);
 Adventurer Cplusplus = new CodeWarrior("C++",110);
+int turns = 0;
 
 
 while(notquit)
 {
-  boolean validresponse = true;
+boolean validresponse = true;
 System.out.println("---------------");
 System.out.println("Psyger0 - HP: " + Psyger0.getHP() + " Special: " + Psyger0.getSpecial());
 System.out.println("C++ - HP: " + Cplusplus.getHP() + " Special: " + Cplusplus.getSpecial());
@@ -107,13 +108,13 @@ if(Psyger0.getHP() < 1)
   System.out.println("Cplusplus wins!");
   notquit = false;
 }
-
+turns++;
 }
 System.out.println();
 System.out.println("Final stats: ");
 System.out.println("Psyger0 - HP: " + Psyger0.getHP() + " Special: " + Psyger0.getSpecial());
 System.out.println("C++ - HP: " + Cplusplus.getHP() + " Special: " + Cplusplus.getSpecial());
-
+System.out.println("Battle finished in " + turns + " turns.");
 }
 
 
