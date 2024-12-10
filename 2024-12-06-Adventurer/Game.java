@@ -47,10 +47,39 @@ if(Cplusplus.getHP() > 0 && notquit && validresponse)
 {
 
   String resultant = "";
-  int randNum = (int) Math.random()*3;
+  int randNum = (int) (Math.random()*3);
+
+  if(Cplusplus.getHP() < 50)
+  {
+    randNum = ((int) (Math.random() * 3)) + ((int) (Math.random() * 3));
+    if(randNum > 2)
+    {
+      randNum = 2;
+    }
+  }
+  if(Psyger0.getHP() < 50)
+  {
+    int randoNum = (int) (Math.random() * 3);
+    if(randoNum == 0)
+    {
+      randNum = 0;
+    }
+  }
+  if(Cplusplus.getHP() == Cplusplus.getmaxHP())
+  {
+    randNum = ((int) (Math.random()*2));
+  }
+
+  if(Cplusplus.getSpecial() >= 8)
+  {
+    randNum = 1;
+  }
+
   if(randNum == 0){resultant = "a";}
-  if(randNum == 1){resultant = "sp";}
-  if(randNum == 2){resultant = "su";}
+  else if(randNum == 1){resultant = "sp";}
+  else if(randNum == 2){resultant = "su";}
+
+
 
   if(resultant.equals("a"))
   {
