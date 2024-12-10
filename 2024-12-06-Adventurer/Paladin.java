@@ -83,6 +83,7 @@ public String support()
 public String specialAttack(Adventurer other)
 {
   int dmgnum = 50;
+  int altdmgnum = (int) (Math.random()*6) + 1;
   if(special == 20)
   {
       other.applyDamage(dmgnum);
@@ -90,7 +91,8 @@ public String specialAttack(Adventurer other)
       return "Bring forth the chaos of both into one, and sing the twilight of a new origin. ARMAGEDDON!";
   }
   else{
-    return "Not enough strikes to activate Armageddon. Instead: " + this.attack(other);
+    other.applyDamage(altdmgnum);
+    return "Not enough strikes to activate Armageddon. Instead: use slash on " + other.getName() + " to deal " + altdmgnum + " damage!";
   }
 }
 
