@@ -10,10 +10,12 @@ public class Paladin extends Adventurer{
 public Paladin(String name)
 {
   this(name,10);
+
 }
 public Paladin(String name,int hp)
 {
   super(name,hp);
+  this.setmaxHP(130);
 }
 
 
@@ -49,36 +51,48 @@ public int getSpecialMax()
 
 public String attack(Adventurer other)
 {
-  int dmgnum = (int) Math.random()*10 + 5;
+  int dmgnum = (int) (Math.random()*6) + 1;
   restoreSpecial(1);
   other.applyDamage(dmgnum);
-  return "Slash!";
+  return this.getName() + " used slash on " + other.getName() + " and dealt " + dmgnum + " damage!";
 }
 
 public String support(Adventurer other)
 {
   double defbuff = 0.1;
-  other.applyDamage((int)(other.getmaxHP()*-(defbuff)));
-  return "Heal!";
+  int healamt = (int)(other.getmaxHP()*-(defbuff));
+  if(healamt < -(other.getmaxHP() - other.getHP()))
+    {
+      healamt = -(other.getmaxHP() - other.getHP());
+    }
+  other.applyDamage(healamt);
+  return this.getName() + " healed " + other.getName() + " for " + -healamt + " health!";
 }
 
 public String support()
 {
-  applyDamage((int)(HP*-0.2));
-  return "Heal!";
+  int healamt = (int)(this.getHP()*-0.2);
+  if(healamt < -(this.getmaxHP() - this.getHP()))
+  {
+    healamt = -(this.getmaxHP() - this.getHP());
+  }
+  applyDamage(healamt);
+  return this.getName() + " healed for " + -healamt + " health!";
 }
 
 public String specialAttack(Adventurer other)
 {
-  int dmgnum = 120;
+  int dmgnum = 50;
+  int altdmgnum = (int) (Math.random()*6) + 1;
   if(special == 20)
   {
       other.applyDamage(dmgnum);
       setSpecial(0);
-      return "ARMAGEDDON";
+      return "Bring forth the chaos of both into one, and sing the twilight of a new origin. ARMAGEDDON!";
   }
   else{
-    return "Special Charge Not High Enough";
+    other.applyDamage(altdmgnum);
+    return "Not enough strikes to activate Armageddon. Instead: use slash on " + other.getName() + " to deal " + altdmgnum + " damage!";
   }
 }
 

@@ -8,11 +8,12 @@ public static void main(String[] args) {
 boolean notquit = true;
 Adventurer Psyger0 = new Paladin("Psyger-0", 130);
 Adventurer Cplusplus = new CodeWarrior("C++",110);
+int turns = 0;
 
 
 while(notquit)
 {
-  boolean validresponse = true;
+boolean validresponse = true;
 System.out.println("---------------");
 System.out.println("Psyger0 - HP: " + Psyger0.getHP() + " Special: " + Psyger0.getSpecial());
 System.out.println("C++ - HP: " + Cplusplus.getHP() + " Special: " + Cplusplus.getSpecial());
@@ -47,10 +48,39 @@ if(Cplusplus.getHP() > 0 && notquit && validresponse)
 {
 
   String resultant = "";
-  int randNum = (int) Math.random()*3;
+  int randNum = (int) (Math.random()*3);
+
+  if(Cplusplus.getHP() < 50)
+  {
+    randNum = ((int) (Math.random() * 3)) + ((int) (Math.random() * 3));
+    if(randNum > 2)
+    {
+      randNum = 2;
+    }
+  }
+  if(Psyger0.getHP() < 50)
+  {
+    int randoNum = (int) (Math.random() * 3);
+    if(randoNum == 0)
+    {
+      randNum = 0;
+    }
+  }
+  if(Cplusplus.getHP() == Cplusplus.getmaxHP())
+  {
+    randNum = ((int) (Math.random()*2));
+  }
+
+  if(Cplusplus.getSpecial() >= 8)
+  {
+    randNum = 1;
+  }
+
   if(randNum == 0){resultant = "a";}
-  if(randNum == 1){resultant = "sp";}
-  if(randNum == 2){resultant = "su";}
+  else if(randNum == 1){resultant = "sp";}
+  else if(randNum == 2){resultant = "su";}
+
+
 
   if(resultant.equals("a"))
   {
@@ -78,13 +108,13 @@ if(Psyger0.getHP() < 1)
   System.out.println("Cplusplus wins!");
   notquit = false;
 }
-
+turns++;
 }
 System.out.println();
 System.out.println("Final stats: ");
 System.out.println("Psyger0 - HP: " + Psyger0.getHP() + " Special: " + Psyger0.getSpecial());
 System.out.println("C++ - HP: " + Cplusplus.getHP() + " Special: " + Cplusplus.getSpecial());
-
+System.out.println("Battle finished in " + turns + " turns.");
 }
 
 
