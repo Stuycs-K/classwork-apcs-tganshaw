@@ -19,21 +19,12 @@ if(remainingLetters == 0)
 }
 else
 {
-if(remainingLetters == 1)
-{
 
-  for(int i = 0; i < alphabet.length();i++){
-
-  makeWords(remainingLetters-1,result+alphabet.charAt(i),alphabet);}
-
-}
-else
-{
   for(int i = 0; i < alphabet.length();i++)
   {
     makeWords(remainingLetters-1,result + alphabet.charAt(i),alphabet);
   }
-}
+
 
 
 }
